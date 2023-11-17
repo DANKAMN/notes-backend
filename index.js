@@ -2,6 +2,8 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 
+
+
 const requestLogger = (request, response, next) => {
   console.log('Method:', request.method)
   console.log('Path:  ', request.path)
@@ -17,7 +19,7 @@ const unknownEndpoint = (request, response) => {
 app.use(cors())
 app.use(express.json())
 app.use(requestLogger)
-app.use(express.static('build'))
+app.use(express.static('dist'))
 
 let notes = [
   {
