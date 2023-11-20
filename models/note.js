@@ -3,9 +3,7 @@ const mongoose = require('mongoose')
 
 mongoose.set('strictQuery', false)
 
-
 const url = process.env.MONGODB_URL
-
 
 console.log('connecting to', url)
 
@@ -24,7 +22,7 @@ const noteSchema = new mongoose.Schema({
     minLength: 5,
     required: true
   },
-  important: Boolean,
+  important: Boolean
 })
 
 noteSchema.set('toJSON', {
@@ -34,6 +32,5 @@ noteSchema.set('toJSON', {
     delete returnedObject.__v
   }
 })
-
 
 module.exports = mongoose.model('Note', noteSchema)
