@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "deploy:full": "git add . && git commit -m 'Deploy frontend' && git push"
+    "deploy:full": "git add . && git commit -m 'Deploy frontend' && git push",
+    "test": "jest --verbose"
   },
   "author": "",
   "license": "ISC",
@@ -23,9 +24,13 @@
     "eslint-plugin-import": "^2.29.0",
     "eslint-plugin-n": "^16.3.1",
     "eslint-plugin-promise": "^6.1.1",
+    "jest": "^29.7.0",
     "nodemon": "^2.0.20"
   },
   "engines": {
     "node": ">=18.18.0 <19.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }
